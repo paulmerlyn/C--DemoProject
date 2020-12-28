@@ -1,0 +1,16 @@
+/home/pmerlyn/code/dotNet/learning-c#/gradebook/src/GradeBook/bin/Debug/net5.0/GradeBook
+/home/pmerlyn/code/dotNet/learning-c#/gradebook/src/GradeBook/bin/Debug/net5.0/GradeBook.deps.json
+/home/pmerlyn/code/dotNet/learning-c#/gradebook/src/GradeBook/bin/Debug/net5.0/GradeBook.runtimeconfig.json
+/home/pmerlyn/code/dotNet/learning-c#/gradebook/src/GradeBook/bin/Debug/net5.0/GradeBook.runtimeconfig.dev.json
+/home/pmerlyn/code/dotNet/learning-c#/gradebook/src/GradeBook/bin/Debug/net5.0/GradeBook.dll
+/home/pmerlyn/code/dotNet/learning-c#/gradebook/src/GradeBook/bin/Debug/net5.0/ref/GradeBook.dll
+/home/pmerlyn/code/dotNet/learning-c#/gradebook/src/GradeBook/bin/Debug/net5.0/GradeBook.pdb
+/home/pmerlyn/code/dotNet/learning-c#/gradebook/src/GradeBook/obj/Debug/net5.0/GradeBook.csprojAssemblyReference.cache
+/home/pmerlyn/code/dotNet/learning-c#/gradebook/src/GradeBook/obj/Debug/net5.0/GradeBook.GeneratedMSBuildEditorConfig.editorconfig
+/home/pmerlyn/code/dotNet/learning-c#/gradebook/src/GradeBook/obj/Debug/net5.0/GradeBook.AssemblyInfoInputs.cache
+/home/pmerlyn/code/dotNet/learning-c#/gradebook/src/GradeBook/obj/Debug/net5.0/GradeBook.AssemblyInfo.cs
+/home/pmerlyn/code/dotNet/learning-c#/gradebook/src/GradeBook/obj/Debug/net5.0/GradeBook.csproj.CoreCompileInputs.cache
+/home/pmerlyn/code/dotNet/learning-c#/gradebook/src/GradeBook/obj/Debug/net5.0/GradeBook.dll
+/home/pmerlyn/code/dotNet/learning-c#/gradebook/src/GradeBook/obj/Debug/net5.0/ref/GradeBook.dll
+/home/pmerlyn/code/dotNet/learning-c#/gradebook/src/GradeBook/obj/Debug/net5.0/GradeBook.pdb
+/home/pmerlyn/code/dotNet/learning-c#/gradebook/src/GradeBook/obj/Debug/net5.0/GradeBook.genruntimeconfig.cache
