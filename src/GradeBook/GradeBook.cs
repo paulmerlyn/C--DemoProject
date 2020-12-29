@@ -6,6 +6,11 @@ namespace GradeBook
     public delegate void GradeAddedDelegate(object sender, EventArgs args);
 
     public class NamedObject {
+        public NamedObject(string name)
+        {
+            Name = name;
+        }
+
         public string Name {
             get;
             set;
@@ -19,12 +24,12 @@ namespace GradeBook
 
         //private string name;
 
-        public Book(string name) {
-            this.Name = name;
+        public Book(string name) : base(name) {
+            //this.Name = name;
         }
 
-        public Book(string name, string category) {
-            this.Name = name;
+        public Book(string name, string category) : base(name) {
+            //this.Name = name;
             this.category = category;
         }
 
