@@ -18,6 +18,12 @@ namespace GradeBook
         public Book(string name) {
             this.Name = name;
         }
+
+        public Book(string name, string category) {
+            this.Name = name;
+            this.category = category;
+        }
+
         public void AddGrade(double grade) {
             if (grade >= 0 && grade <= 100) {
                 grades.Add(grade);
@@ -117,5 +123,12 @@ namespace GradeBook
                     break;
             }
         }
+
+        
+        /* When designated as readonly, a field may be changed from its default value in the constructor only*/
+        readonly string category = "Science";
+
+        /* Constants don't need to be in capitalized. They are accessed at class-level (cf. object-level). */
+        public const string SERVICELEVEL = "Professional";
     }
 }

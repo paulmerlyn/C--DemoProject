@@ -36,6 +36,7 @@ namespace GradeBook {
             } else {
                 Console.WriteLine("Hello Mr No Name!");
             }
+            Console.WriteLine($"The service level is: {Book.SERVICELEVEL}");
 
             System.Console.WriteLine($"Welcome to {book.Name}");
             //Console.WriteLine($"Grade average is: {book.AverageGrade()}");
