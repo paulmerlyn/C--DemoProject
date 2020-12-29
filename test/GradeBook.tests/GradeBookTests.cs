@@ -7,16 +7,37 @@ namespace GradeBook.tests
 
     public class GradeBookTests
     {
+        int count = 0; // default access-control-level is private
+
         [Fact]
         public void WriteLogDelegateCanPointToAMethod() {
-            WriteLogDelegate log;
-            log = new WriteLogDelegate(ReturnMessage);
+            WriteLogDelegate log = ReturnMessage;
+            //log = new WriteLogDelegate(ReturnMessage); // This is the long-hand syntax for assigning a method to a delegate
+            log = ReturnMessage; // This is the alternative short-hand syntax!
+            
+            log += IncrementCountAndLowerCase;
             var result = log("Hello log!");
-            Assert.Equal("Hello log!", result);
+            Assert.Equal("hello log!", result);
+        }
+
+        [Fact]
+        public void CountHasIncrementedWithForEachDelegatedCall() {
+            WriteLogDelegate log = IncrementCountAndLowerCase;
+            log += IncrementCountAndLowerCase;
+            log += IncrementCountAndLowerCase;
+            log += IncrementCountAndLowerCase;
+            var result = log("Test the counter");
+            Assert.Equal(4, count);
         }
 
         private string ReturnMessage(string message) {
+            count++;
             return message;
+        }
+
+        private string IncrementCountAndLowerCase(string message) {
+            count++;
+            return message.ToLower();
         }
 
         [Fact]
