@@ -12,7 +12,7 @@ namespace GradeBook.tests
             //var actual = 11;
 
             var book = new Book("Emma's Grade Book");
-            Assert.Equal("Emma's Grade Book", book.GetName());
+            Assert.Equal("Emma's Grade Book", book.Name);
         }
 
         [Fact]

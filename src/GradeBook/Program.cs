@@ -37,7 +37,7 @@ namespace GradeBook {
                 Console.WriteLine("Hello Mr No Name!");
             }
 
-            System.Console.WriteLine($"Welcome to {book.GetName()}");
+            System.Console.WriteLine($"Welcome to {book.Name}");
             //Console.WriteLine($"Grade average is: {book.AverageGrade()}");
             //Console.WriteLine($"Lowest grade is: {book.LowestGrade():N2}");
             //System.Console.WriteLine($"Highest grade is: {book.HighestGrade():N2}");

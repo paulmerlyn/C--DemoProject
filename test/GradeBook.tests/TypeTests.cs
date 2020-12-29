@@ -46,11 +46,11 @@ namespace GradeBook.tests
         {
 
             var book1 = GetBook("Book 1");
-            Assert.Equal("Book 1", book1.GetName());
+            Assert.Equal("Book 1", book1.Name);
 
             OverwriteBookNameUsingRef(ref book1, "New Name");
 
-            Assert.Equal("New Name", book1.GetName());
+            Assert.Equal("New Name", book1.Name);
         }
 
         /* Note: you will rarely want to pass arguments by reference. Passing by value is the default for C-Sharp. Note
@@ -65,9 +65,9 @@ namespace GradeBook.tests
         {
 
             var book1 = GetBook("Book 1");
-            SetName(book1, "New Name");
+            //SetName(book1, "New Name");
 
-            Assert.Equal("New Name", book1.GetName());
+            //Assert.Equal("New Name", book1.Name);
         }
 
         [Fact]
@@ -77,8 +77,8 @@ namespace GradeBook.tests
             var book1 = GetBook("Book 1");
             var book2 = GetBook("Book 2");
 
-            Assert.Equal("Book 1", book1.GetName());
-            Assert.Equal("Book 2", book2.name);
+            Assert.Equal("Book 1", book1.Name);
+            Assert.Equal("Book 2", book2.Name);
             Assert.NotSame(book1, book2);
             //Assert.Equal("Emma's Grade Book", book.GetName());
         }
@@ -101,7 +101,7 @@ namespace GradeBook.tests
         }
 
         private void SetName(Book book, string name) {
-            book.SetName(name);
+            //book.Name = name;
         }
 
     }

@@ -8,22 +8,15 @@ namespace GradeBook
         
         private List<char> letterGrades = new List<char>();
 
-        private string name;
+        //private string name;
 
-        /*public string Name {
-            get {
-                return name;
-            }
-
-            set {
-                if(!String.IsNullOrEmpty(value)) {
-                    name = value;
-                }
-            }
-        }*/
+        public string Name {
+            get; 
+            private set;
+        }
 
         public Book(string name) {
-            this.name = name;
+            this.Name = name;
         }
         public void AddGrade(double grade) {
             if (grade >= 0 && grade <= 100) {
@@ -93,13 +86,13 @@ namespace GradeBook
             return letter;
         }
 
-        public void SetName(string name) {
+        /*public void SetName(string name) {
             this.name = name;
         }
 
         public string GetName() {
             return this.name;
-        }
+        }*/
 
         public void AddLetterGrade(char letter) {
             letterGrades.Add(letter);
