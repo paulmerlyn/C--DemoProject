@@ -5,7 +5,14 @@ namespace GradeBook
 {
     public delegate void GradeAddedDelegate(object sender, EventArgs args);
 
-    public class NamedObject {
+    public abstract class BookBase : NamedObject {
+        protected BookBase(string name) : base(name)
+        {
+        }
+
+        public abstract void AddGrade(double grade);
+    }
+    public class NamedObject : Object {
         public NamedObject(string name)
         {
             Name = name;
@@ -17,7 +24,7 @@ namespace GradeBook
         }
     }
 
-    public class Book : NamedObject {
+    public class Book : BookBase {
         private List<double> grades = new List<double>();
         
         private List<char> letterGrades = new List<char>();
@@ -33,7 +40,7 @@ namespace GradeBook
             this.category = category;
         }
 
-        public void AddGrade(double grade) {
+        public override void AddGrade(double grade) {
             if (grade >= 0 && grade <= 100) {
                 grades.Add(grade);
                 if (GradeAdded != null) {
