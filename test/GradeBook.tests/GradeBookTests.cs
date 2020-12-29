@@ -46,13 +46,13 @@ namespace GradeBook.tests
             //var expected = 11;
             //var actual = 11;
 
-            var book = new Book("Emma's Grade Book");
+            var book = new InMemoryBook("Emma's Grade Book");
             Assert.Equal("Emma's Grade Book", book.Name);
         }
 
         [Fact]
         public void BookCalculatesAnAverageGrade() {
-            var book = new Book("Whatever");
+            var book = new InMemoryBook("Whatever");
             book.AddGrade(3);
             book.AddGrade(5);
             book.AddGrade(10);
@@ -66,7 +66,7 @@ namespace GradeBook.tests
 
                 [Fact]
         public void BookCalculatesLetterGrade() {
-            var book = new Book("Whatever");
+            var book = new InMemoryBook("Whatever");
             book.AddGrade(80);
             book.AddGrade(85);
             var result = book.GetStatistics();

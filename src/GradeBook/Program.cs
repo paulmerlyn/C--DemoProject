@@ -7,7 +7,7 @@ namespace GradeBook {
     {
         static void Main(string[] args)
         {
-            var book = new Book("Paul's Grade Book");
+            var book = new InMemoryBook("Paul's Grade Book");
             book.GradeAdded += OnGradeAdded;
             book.GradeAdded += OnGradeAdded;
 
@@ -31,7 +31,7 @@ namespace GradeBook {
             {
                 Console.WriteLine("Hello Mr No Name!");
             }
-            Console.WriteLine($"The service level is: {Book.SERVICELEVEL}");
+            Console.WriteLine($"The service level is: {InMemoryBook.SERVICELEVEL}");
 
             System.Console.WriteLine($"Welcome to {book.Name}");
             //Console.WriteLine($"Grade average is: {book.AverageGrade()}");

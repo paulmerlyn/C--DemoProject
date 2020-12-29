@@ -5,8 +5,8 @@ namespace GradeBook
 {
     public delegate void GradeAddedDelegate(object sender, EventArgs args);
 
-    public abstract class BookBase : NamedObject {
-        protected BookBase(string name) : base(name)
+    public abstract class Book : NamedObject {
+        protected Book(string name) : base(name)
         {
         }
 
@@ -24,18 +24,18 @@ namespace GradeBook
         }
     }
 
-    public class Book : BookBase {
+    public class InMemoryBook : Book {
         private List<double> grades = new List<double>();
         
         private List<char> letterGrades = new List<char>();
 
         //private string name;
 
-        public Book(string name) : base(name) {
+        public InMemoryBook(string name) : base(name) {
             //this.Name = name;
         }
 
-        public Book(string name, string category) : base(name) {
+        public InMemoryBook(string name, string category) : base(name) {
             //this.Name = name;
             this.category = category;
         }

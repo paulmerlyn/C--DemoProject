@@ -56,8 +56,8 @@ namespace GradeBook.tests
         /* Note: you will rarely want to pass arguments by reference. Passing by value is the default for C-Sharp. Note
          * also that you can use "out" instead of "ref" keyword. The two are similar except that you'll get an 
          * error unless you initialize a parameter whose value is passed via the out keyword. */
-        private void OverwriteBookNameUsingRef(ref Book book, string name) {
-            book = new Book(name);
+        private void OverwriteBookNameUsingRef(ref InMemoryBook book, string name) {
+            book = new InMemoryBook(name);
         }
         
         [Fact]
@@ -96,11 +96,11 @@ namespace GradeBook.tests
         }
 
 
-        private Book GetBook(string name) {
-            return new Book(name);
+        private InMemoryBook GetBook(string name) {
+            return new InMemoryBook(name);
         }
 
-        private void SetName(Book book, string name) {
+        private void SetName(InMemoryBook book, string name) {
             //book.Name = name;
         }
 
