@@ -4,17 +4,20 @@ using System.Collections.Generic;
 namespace GradeBook
 {
     public delegate void GradeAddedDelegate(object sender, EventArgs args);
-    public class Book {
+
+    public class NamedObject {
+        public string Name {
+            get;
+            set;
+        }
+    }
+
+    public class Book : NamedObject {
         private List<double> grades = new List<double>();
         
         private List<char> letterGrades = new List<char>();
 
         //private string name;
-
-        public string Name {
-            get; 
-            private set;
-        }
 
         public Book(string name) {
             this.Name = name;
