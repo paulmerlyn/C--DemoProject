@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace GradeBook
 {
+    public delegate void GradeAddedDelegate(object sender, EventArgs args);
     public class Book {
         private List<double> grades = new List<double>();
         
@@ -27,10 +28,15 @@ namespace GradeBook
         public void AddGrade(double grade) {
             if (grade >= 0 && grade <= 100) {
                 grades.Add(grade);
+                if (GradeAdded != null) {
+                    GradeAdded(this, new EventArgs());
+                }
             } else {
                 throw new ArgumentException($"Invalid {nameof(grade)}");
             }
         }
+
+        public event GradeAddedDelegate GradeAdded;
 
         private double HighestGrade() {
             double highGrade = double.MinValue;
