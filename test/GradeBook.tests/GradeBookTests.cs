@@ -3,8 +3,22 @@ using Xunit;
 
 namespace GradeBook.tests
 {
+    public delegate string WriteLogDelegate(string logMessage);
+
     public class GradeBookTests
     {
+        [Fact]
+        public void WriteLogDelegateCanPointToAMethod() {
+            WriteLogDelegate log;
+            log = new WriteLogDelegate(ReturnMessage);
+            var result = log("Hello log!");
+            Assert.Equal("Hello log!", result);
+        }
+
+        private string ReturnMessage(string message) {
+            return message;
+        }
+
         [Fact]
         public void BookHoldsAnIdentifyingName()
         {
