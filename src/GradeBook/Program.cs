@@ -8,13 +8,29 @@ namespace GradeBook {
         static void Main(string[] args)
         {
             var book = new Book("Paul's Grade Book");
-            book.AddGrade(2);
-            book.AddGrade(5);
-            book.AddGrade(9);
 
-            //double gradeTotal = 0;
-            //double gradeAverage = 0;
-            //var grades = new List<double>() {5, 7, 13, 6, 2};
+            Console.WriteLine("Welcome to the Grade Book! Enter grades. Type 'q' to quit or end your sequence of grades.");
+
+            while (true) {
+                Console.WriteLine("Enter grade (or q): ");
+                var input = Console.ReadLine();
+                if (input == "q") {
+                    break;
+                }
+                
+                try {
+                    var grade = double.Parse(input);
+                    book.AddGrade(grade);
+                } catch(ArgumentException ex) {
+                    Console.WriteLine(ex.Message);
+                } catch(FormatException ex) {
+                    Console.WriteLine(ex.Message);
+                }
+            }
+
+            //book.AddGrade(20);
+            //book.AddGrade(71);
+            //book.AddGrade(90);
             if (args.Length > 0) {
                 Console.WriteLine($"Hello, {args[0]} {args[1]}");
             } else {

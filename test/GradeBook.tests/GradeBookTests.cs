@@ -6,7 +6,7 @@ namespace GradeBook.tests
     public class GradeBookTests
     {
         [Fact]
-        public void Test1()
+        public void BookHoldsAnIdentifyingName()
         {
             //var expected = 11;
             //var actual = 11;
@@ -16,7 +16,7 @@ namespace GradeBook.tests
         }
 
         [Fact]
-        public void Test2() {
+        public void BookCalculatesAnAverageGrade() {
             var book = new Book("Whatever");
             book.AddGrade(3);
             book.AddGrade(5);
@@ -28,5 +28,15 @@ namespace GradeBook.tests
             Assert.Equal(3, result.GetLow());
             Assert.Equal(10, result.GetHigh());
         }
+
+                [Fact]
+        public void BookCalculatesLetterGrade() {
+            var book = new Book("Whatever");
+            book.AddGrade(80);
+            book.AddGrade(85);
+            var result = book.GetStatistics();
+            Assert.Equal('B', result.GetLetterGrade());
+        }
+
     }
 }

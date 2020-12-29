@@ -3,11 +3,13 @@ namespace GradeBook {
         private double average;
         private double min;
         private double max;
+        private char letter;
 
-        public Statistics(double average, double min, double max) {
+        public Statistics(double average, double min, double max, char letter) {
             this.average = average;
             this.min = min;
             this.max = max;
+            this.letter = letter;
         }
 
         public double GetAverage() {
@@ -20,6 +22,10 @@ namespace GradeBook {
 
         public double GetHigh() {
             return this.max;
+        }
+
+        public char GetLetterGrade() {
+            return this.letter;
         }
 
     }
