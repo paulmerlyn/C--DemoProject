@@ -3,14 +3,28 @@ using System.Collections.Generic;
 
 namespace GradeBook
 {
+    public interface IBook {
+        void AddGrade(double grade);
+        Statistics GetStatistics();
+        string Name { get; }
+        event GradeAddedDelegate GradeAdded;
+    }
     public delegate void GradeAddedDelegate(object sender, EventArgs args);
 
-    public abstract class Book : NamedObject {
+    public abstract class Book : NamedObject, IBook {
         protected Book(string name) : base(name)
         {
         }
 
+        // Abstract methods are implicitly virtual, so no need to use the virtual keyword here
         public abstract void AddGrade(double grade);
+
+        // The keyword virtual signifies that a derived class (e.g. InMemoryBook) may try to override this method
+        public virtual Statistics GetStatistics() {
+            throw new NotImplementedException();
+        }
+
+        public virtual event GradeAddedDelegate GradeAdded;
     }
     public class NamedObject : Object {
         public NamedObject(string name)
@@ -51,7 +65,7 @@ namespace GradeBook
             }
         }
 
-        public event GradeAddedDelegate GradeAdded;
+        public override event GradeAddedDelegate GradeAdded;
 
         private double HighestGrade() {
             double highGrade = double.MinValue;
@@ -83,7 +97,7 @@ namespace GradeBook
             return $"Calling ShoweStatistics reveals the following\nHighest grade is: {this.HighestGrade():N2}\nLowest grade is: {this.LowestGrade():N2}\nAverage grade is: {this.AverageGrade():N1}\nLetter grade is: {this.LetterGrade():N1}";
         }
 
-        public Statistics GetStatistics() {
+        public override Statistics GetStatistics() {
             return new Statistics(this.AverageGrade(), this.LowestGrade(), this.HighestGrade(), this.LetterGrade());
         }
 

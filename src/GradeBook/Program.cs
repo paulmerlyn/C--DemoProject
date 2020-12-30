@@ -40,7 +40,7 @@ namespace GradeBook {
             Console.WriteLine(book.ShowStatistics());
         }
 
-        private static void EnterGrades(Book book)
+        private static void EnterGrades(IBook book)
         {
             while (true)
             {
